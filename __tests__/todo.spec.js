@@ -7,13 +7,17 @@ describe("Todo API tests",()=>{
     it("Add todo item in database",(done)=>{
         request(app).post("/todo").send({
             name:"Hello"
-        }).then((response)=>{
-            expect(response.name,done).toBe("Hello");
+        }).then((responseReturn)=>{
+            expect(responseReturn.status).toBe(201)
+            done();
         })
     })
     it("Get todo item from database",(done)=>{
+        jest.setTimeout(30000)
         request(app).get("/todo").then((response)=>{
-            expect(response.length,done).toBeGreaterThan(0);
+           var len=JSON.parse(response.text).length;
+            expect(len).toBeGreaterThan(0);
+            done();
         })
     })
 })
