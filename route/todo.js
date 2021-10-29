@@ -1,6 +1,8 @@
 const express=require('express');
+//creating router
 const router=express.Router();
 const todoBal=require('../BAL/todo');
+//get all todo list
 router.get('/',async(req,res)=>{
     todoBal.getAllTodo((data,err)=>{
         if(data.message=="success"){
@@ -11,6 +13,7 @@ router.get('/',async(req,res)=>{
 
     })
 })
+//add to do list
 router.post('/',async(req,res)=>{
     todoBal.addTodo(req.body,(data,err)=>{
         if(data.message=="success"){
