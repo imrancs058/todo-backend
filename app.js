@@ -1,4 +1,5 @@
 var app=require("./index");
-app.listen(3322,()=>{
+require("dotenv").config();
+app.listen(process.env.PORT,()=>{
     console.log("Listening at port 3322")
 })
