@@ -10,8 +10,12 @@ To build docker image:
 
 Run the docker with command\
 ### ` docker-compose start`
-To run app
+Now you can access app by http://localhost:3333/todo
+If you want to run it without docker then
+
 ### `node app.js`
+And you can use api by this url http://localhost:3322
+
 
 To run Unit and Integration Tests
 ###`npm run test`
