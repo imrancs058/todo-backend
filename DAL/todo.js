@@ -7,7 +7,7 @@ var todoDal= {
         //query to get all todo
         todo.find().then(function (data) {
             var arr = {message: "success", data: data}
-            callback(arr);
+            callback(null,arr);
         }).catch(function (err) {
             var arr = {message: "error", data: err.message}
             callback(arr);
@@ -21,7 +21,7 @@ var todoDal= {
         //saving object to db
         todoObj.save().then(function (savedData) {
             var data={message:"success",data: {name:savedData._doc.name}}
-            callback(data)
+            callback(null,data)
         }).catch(function (err) {
             var data={message:"error",data:err.message}
             callback(data);
