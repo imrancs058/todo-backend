@@ -12,5 +12,14 @@ services:
       - '/app/node_modules'
     ports:
       - 3333:3322
+    depends_on:
+      - mongodb
     environment:
       - CHOKIDAR_USEPOLLING=true
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - './data-node:/data/db'
+    ports:
+      - 27018:27017
