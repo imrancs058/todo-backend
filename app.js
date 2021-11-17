@@ -1,5 +1,6 @@
 var app=require("./index");
 require("dotenv").config();
-app.listen(process.env.PORT,()=>{
+var config=require("./config.json");
+app.listen(config.port,()=>{
     console.log("Listening at port 3322")
 })
