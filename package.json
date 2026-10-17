@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",
-    "start": "node app.js",
+    "start": "node api.js && node app.js",
     "pact:providerTests": "node ./pact/provider_tests.js",
     "test:pact": "start-server-and-test start http://localhost:3322 pact:providerTests"
   },
